@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package compiler_server;
+
+import "csproto/request.proto";
+import "google/protobuf/empty.proto";
+
+message CompileArgs {
+  uint32 id  = 1;
+  string src = 2;
+  string obj = 3;
+}
+
+service Compiler {
+    rpc Compile(CompileArgs) returns (CompileResponseArgs) {}
+    rpc ShutdownServer(google.protobuf.Empty) returns (CompileResponseArgs) {}
+}

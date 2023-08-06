@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package compiler_server;
+
+message CompileResponseArgs {
+  uint32 id  = 1;
+  uint32 pid = 2;
+}
